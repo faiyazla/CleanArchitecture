@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "E904A976-87DE-4CF7-9557-78A6768D0A45",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CleanArchitecture.xcodeproj",
+        "identifier" : "A3FF09D52E56E4AF0088CEFF",
+        "name" : "CleanArchitectureAPIEndToEndTests"
+      }
+    }
+  ],
+  "version" : 1
+}
