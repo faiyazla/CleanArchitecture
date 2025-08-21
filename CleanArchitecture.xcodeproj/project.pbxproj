@@ -36,6 +36,16 @@
 		A3FF09E02E56E5640088CEFF /* CleanArchitectureAPIEndToEndTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitectureAPIEndToEndTests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A3FF09E22E56E6320088CEFF /* Exceptions for "CleanArchitectureTests" folder in "CleanArchitectureAPIEndToEndTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Feed API/Helpers/XCTestCase+MemoryLeakTracking.swift",
+			);
+			target = A3FF09D52E56E4AF0088CEFF /* CleanArchitectureAPIEndToEndTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A346F6892E4AF98A004C768B /* CleanArchitecture */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -44,6 +54,9 @@
 		};
 		A346F6942E4AF98A004C768B /* CleanArchitectureTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A3FF09E22E56E6320088CEFF /* Exceptions for "CleanArchitectureTests" folder in "CleanArchitectureAPIEndToEndTests" target */,
+			);
 			path = CleanArchitectureTests;
 			sourceTree = "<group>";
 		};
