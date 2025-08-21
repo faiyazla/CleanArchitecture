@@ -34,6 +34,7 @@
 		A3FF09D12E56D0EC0088CEFF /* CleanArchitecture.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitecture.xctestplan; sourceTree = "<group>"; };
 		A3FF09D62E56E4AF0088CEFF /* CleanArchitectureAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FF09E02E56E5640088CEFF /* CleanArchitectureAPIEndToEndTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitectureAPIEndToEndTests.xctestplan; sourceTree = "<group>"; };
+		A3FF09E32E56E6FD0088CEFF /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -97,6 +98,7 @@
 		A346F67D2E4AF989004C768B = {
 			isa = PBXGroup;
 			children = (
+				A3FF09E32E56E6FD0088CEFF /* CI.xctestplan */,
 				A3FF09E02E56E5640088CEFF /* CleanArchitectureAPIEndToEndTests.xctestplan */,
 				A3FF09D12E56D0EC0088CEFF /* CleanArchitecture.xctestplan */,
 				A346F6892E4AF98A004C768B /* CleanArchitecture */,

@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "1CCBF1FB-2FB4-431C-9D89-EEE007429FE2",
+      "name" : "Test Scheme Action",
+      "options" : {
+        "testExecutionOrdering" : "random"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CleanArchitecture.xcodeproj",
+        "identifier" : "A346F68F2E4AF98A004C768B",
+        "name" : "CleanArchitectureTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:CleanArchitecture.xcodeproj",
+        "identifier" : "A3FF09D52E56E4AF0088CEFF",
+        "name" : "CleanArchitectureAPIEndToEndTests"
+      }
+    }
+  ],
+  "version" : 1
+}
