@@ -1,5 +1,5 @@
 //
-//  RemoteFeedLoaderTests.swift
+//  LoadFeedFromRemoteUseCaseTests.swift
 //  CleanArchitectureTests
 //
 //  Created by Faiyaz Ahmed on 13/08/2025.
@@ -8,7 +8,7 @@
 import XCTest
 import CleanArchitecture
 
-final class RemoteFeedLoaderTests: XCTestCase {
+final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     
     func test_init() {
         let (_, client) = makeSUT()
