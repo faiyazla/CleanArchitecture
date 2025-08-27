@@ -41,7 +41,7 @@
 		A3FF09E22E56E6320088CEFF /* Exceptions for "CleanArchitectureTests" folder in "CleanArchitectureAPIEndToEndTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"Feed API/Helpers/XCTestCase+MemoryLeakTracking.swift",
+				"Helpers/XCTestCase+MemoryLeakTracking.swift",
 			);
 			target = A3FF09D52E56E4AF0088CEFF /* CleanArchitectureAPIEndToEndTests */;
 		};
