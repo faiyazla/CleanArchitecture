@@ -10,6 +10,7 @@ import Foundation
 public final class LocalFeedLoader {
     
     public typealias SaveResult = Error?
+    public typealias LoadResult = LoadFeedResult
     
     private let store: FeedStore
     private let currentDate: () -> Date
@@ -36,8 +37,12 @@ public final class LocalFeedLoader {
         }
     }
     
-    public func load(completion: @escaping (Error?) -> Void) {
-        store.retrieve(completion: completion)
+    public func load(completion: @escaping (LoadFeedResult) -> Void) {
+        store.retrieve { error in
+            if let error = error {
+                completion(.failure(error))
+            }
+        }
     }
 }
 private extension Array where Element == FeedImage {
