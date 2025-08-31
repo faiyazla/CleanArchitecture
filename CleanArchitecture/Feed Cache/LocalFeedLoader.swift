@@ -35,6 +35,8 @@ public final class LocalFeedLoader {
             }
         }
     }
+}
+extension LocalFeedLoader {
     
     private func cache(_ feed: [FeedImage], with completion: @escaping (SaveResult) -> Void) {
         store.insert(feed.toLocal(), currentDate: self.currentDate()) { [weak self] error in
@@ -42,7 +44,8 @@ public final class LocalFeedLoader {
             completion(error)
         }
     }
-    
+}
+extension LocalFeedLoader {
     public func load(completion: @escaping (LoadFeedResult) -> Void) {
         
         store.retrieve { [weak self] result in
@@ -58,6 +61,8 @@ public final class LocalFeedLoader {
             }
         }
     }
+}
+extension LocalFeedLoader {
     
     public func validateCache() {
         store.retrieve { [weak self] result in
