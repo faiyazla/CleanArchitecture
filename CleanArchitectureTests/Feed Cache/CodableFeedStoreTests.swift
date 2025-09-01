@@ -67,16 +67,14 @@ class CodableFeedStoreTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        let storeURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("image-feed.store")
-        try? FileManager.default.removeItem(at: storeURL)
-
+        try? FileManager.default.removeItem(at: storeURL())
+        
     }
     
     override func tearDown() {
         super.tearDown()
         
-        let storeURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("image-feed.store")
-        try? FileManager.default.removeItem(at: storeURL)
+        try? FileManager.default.removeItem(at: storeURL())
     }
     
     
@@ -86,12 +84,12 @@ class CodableFeedStoreTests: XCTestCase {
         
         sut.retrieve { result in
             
-           switch result {
-           case .empty:
-               break
-               
-           default:
-               XCTFail("Expected empty result, got \(result) instead")
+            switch result {
+            case .empty:
+                break
+                
+            default:
+                XCTFail("Expected empty result, got \(result) instead")
             }
             
             exp.fulfill()
@@ -119,7 +117,7 @@ class CodableFeedStoreTests: XCTestCase {
         
         wait(for: [exp], timeout: 1.0)
     }
-
+    
     func test_retrieveAfterInsertingToEmptyCache_deliversInsertedValues() {
         let sut = makeSUT()
         let feed = uniqueImageFeed().local
@@ -147,9 +145,12 @@ class CodableFeedStoreTests: XCTestCase {
     //MARK: Helpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> CodableFeedStore {
-        let storeURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("image-feed.store")
-        let sut = CodableFeedStore(storeURL: storeURL)
+        let sut = CodableFeedStore(storeURL: storeURL())
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
+    }
+    
+    private func storeURL() -> URL {
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("image-feed.store")
     }
 }
