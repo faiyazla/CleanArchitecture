@@ -17,10 +17,14 @@ func anyURL() -> URL {
 extension Date {
     
     func minusFeedCacheMaxAge() -> Date {
-        adding(days: -7)
+        adding(days: feedCacheMaxAgeInDays)
     }
     
-    func adding(days: Int) -> Date {
+    private var feedCacheMaxAgeInDays: Int {
+        return -7
+    }
+    
+    private func adding(days: Int) -> Date {
         return Calendar(identifier: .gregorian).date(byAdding: .day, value: days, to: self)!
     }
     func adding(seconds: TimeInterval) -> Date {
