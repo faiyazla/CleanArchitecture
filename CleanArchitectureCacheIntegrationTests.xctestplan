@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "8A24CB63-31EE-4CEA-A367-76598B0145FB",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CleanArchitecture.xcodeproj",
+        "identifier" : "A340D07C2E684A580062F463",
+        "name" : "CleanArchitectureCacheIntegrationTests"
+      }
+    }
+  ],
+  "version" : 1
+}

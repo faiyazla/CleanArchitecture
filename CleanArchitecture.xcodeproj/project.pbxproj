@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A340D0812E684A580062F463 /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; };
 		A346F6912E4AF98A004C768B /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; };
 		A3FF09DA2E56E4AF0088CEFF /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A340D0822E684A580062F463 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A346F67E2E4AF989004C768B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A346F6862E4AF98A004C768B;
+			remoteInfo = CleanArchitecture;
+		};
 		A346F6922E4AF98A004C768B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A346F67E2E4AF989004C768B /* Project object */;
@@ -29,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A340D07D2E684A580062F463 /* CleanArchitectureCacheIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureCacheIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A340D0872E684A960062F463 /* CleanArchitectureCacheIntegrationTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitectureCacheIntegrationTests.xctestplan; sourceTree = "<group>"; };
 		A346F6872E4AF98A004C768B /* CleanArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A346F6902E4AF98A004C768B /* CleanArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FF09D12E56D0EC0088CEFF /* CleanArchitecture.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitecture.xctestplan; sourceTree = "<group>"; };
@@ -49,6 +59,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		A340D07E2E684A580062F463 /* CleanArchitectureCacheIntegrationTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CleanArchitectureCacheIntegrationTests;
+			sourceTree = "<group>";
+		};
 		A346F6892E4AF98A004C768B /* CleanArchitecture */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CleanArchitecture;
@@ -70,6 +85,14 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A340D07A2E684A580062F463 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A340D0812E684A580062F463 /* CleanArchitecture.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A346F6842E4AF98A004C768B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,12 +122,14 @@
 		A346F67D2E4AF989004C768B = {
 			isa = PBXGroup;
 			children = (
+				A340D0872E684A960062F463 /* CleanArchitectureCacheIntegrationTests.xctestplan */,
 				A3FF09E32E56E6FD0088CEFF /* CI.xctestplan */,
 				A3FF09E02E56E5640088CEFF /* CleanArchitectureAPIEndToEndTests.xctestplan */,
 				A3FF09D12E56D0EC0088CEFF /* CleanArchitecture.xctestplan */,
 				A346F6892E4AF98A004C768B /* CleanArchitecture */,
 				A346F6942E4AF98A004C768B /* CleanArchitectureTests */,
 				A3FF09D72E56E4AF0088CEFF /* CleanArchitectureAPIEndToEndTests */,
+				A340D07E2E684A580062F463 /* CleanArchitectureCacheIntegrationTests */,
 				A346F6882E4AF98A004C768B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,6 +140,7 @@
 				A346F6872E4AF98A004C768B /* CleanArchitecture.framework */,
 				A346F6902E4AF98A004C768B /* CleanArchitectureTests.xctest */,
 				A3FF09D62E56E4AF0088CEFF /* CleanArchitectureAPIEndToEndTests.xctest */,
+				A340D07D2E684A580062F463 /* CleanArchitectureCacheIntegrationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +158,29 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A340D07C2E684A580062F463 /* CleanArchitectureCacheIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A340D0862E684A580062F463 /* Build configuration list for PBXNativeTarget "CleanArchitectureCacheIntegrationTests" */;
+			buildPhases = (
+				A340D0792E684A580062F463 /* Sources */,
+				A340D07A2E684A580062F463 /* Frameworks */,
+				A340D07B2E684A580062F463 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A340D0832E684A580062F463 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A340D07E2E684A580062F463 /* CleanArchitectureCacheIntegrationTests */,
+			);
+			name = CleanArchitectureCacheIntegrationTests;
+			packageProductDependencies = (
+			);
+			productName = CleanArchitectureCacheIntegrationTests;
+			productReference = A340D07D2E684A580062F463 /* CleanArchitectureCacheIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A346F6862E4AF98A004C768B /* CleanArchitecture */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A346F6992E4AF98A004C768B /* Build configuration list for PBXNativeTarget "CleanArchitecture" */;
@@ -211,6 +260,9 @@
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
+					A340D07C2E684A580062F463 = {
+						CreatedOnToolsVersion = 16.4;
+					};
 					A346F6862E4AF98A004C768B = {
 						CreatedOnToolsVersion = 16.4;
 					};
@@ -240,11 +292,19 @@
 				A346F6862E4AF98A004C768B /* CleanArchitecture */,
 				A346F68F2E4AF98A004C768B /* CleanArchitectureTests */,
 				A3FF09D52E56E4AF0088CEFF /* CleanArchitectureAPIEndToEndTests */,
+				A340D07C2E684A580062F463 /* CleanArchitectureCacheIntegrationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A340D07B2E684A580062F463 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A346F6852E4AF98A004C768B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,6 +329,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A340D0792E684A580062F463 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A346F6832E4AF98A004C768B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -293,6 +360,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A340D0832E684A580062F463 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A346F6862E4AF98A004C768B /* CleanArchitecture */;
+			targetProxy = A340D0822E684A580062F463 /* PBXContainerItemProxy */;
+		};
 		A346F6932E4AF98A004C768B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A346F6862E4AF98A004C768B /* CleanArchitecture */;
@@ -306,6 +378,34 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		A340D0842E684A580062F463 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.CleanArchitectureCacheIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A340D0852E684A580062F463 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.CleanArchitectureCacheIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		A346F6972E4AF98A004C768B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -558,6 +658,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A340D0862E684A580062F463 /* Build configuration list for PBXNativeTarget "CleanArchitectureCacheIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A340D0842E684A580062F463 /* Debug */,
+				A340D0852E684A580062F463 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A346F6812E4AF989004C768B /* Build configuration list for PBXProject "CleanArchitecture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
