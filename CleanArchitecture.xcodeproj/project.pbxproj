@@ -51,6 +51,8 @@
 		A340D0892E684BC10062F463 /* Exceptions for "CleanArchitectureTests" folder in "CleanArchitectureCacheIntegrationTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"Feed Cache/Helper/FeedCacheTestHelpers.swift",
+				Helpers/SharedTestHelpers.swift,
 				"Helpers/XCTestCase+MemoryLeakTracking.swift",
 			);
 			target = A340D07C2E684A580062F463 /* CleanArchitectureCacheIntegrationTests */;
