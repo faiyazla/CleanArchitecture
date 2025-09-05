@@ -96,7 +96,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
     }
     
     private func anyData() -> Data {
-        return Data.init("any data".utf8)
+        return Data("any data".utf8)
     }
     
     private func anyNSError() -> NSError {
