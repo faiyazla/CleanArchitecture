@@ -72,8 +72,6 @@ final class CleanArchitectureCacheIntegrationTests: XCTestCase {
                 XCTAssertEqual(imageFeed, expectedFeed, "Expected empty feed")
             case let .failure(error):
                 XCTFail("Expected successful feed result, got \(error) instead")
-            @unknown default:
-                XCTFail("Expected successful feed result, got unexpected result \(result) instead")
             }
             exp.fulfill()
         }
