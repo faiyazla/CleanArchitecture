@@ -5,10 +5,7 @@
 //  Created by Faiyaz Ahmed on 12/08/2025.
 //
 
-public enum LoadFeedResult {
-    case success([FeedImage])
-    case failure(Error)
-}
+public typealias LoadFeedResult = Result<[FeedImage], Error>
 
 public protocol FeedLoader {
     func load(completion: @escaping (LoadFeedResult) -> Void)
