@@ -9,6 +9,15 @@
     }
   ],
   "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:CleanArchitecture.xcodeproj",
+          "identifier" : "A346F6862E4AF98A004C768B",
+          "name" : "CleanArchitecture"
+        }
+      ]
+    },
     "testExecutionOrdering" : "random"
   },
   "testTargets" : [
