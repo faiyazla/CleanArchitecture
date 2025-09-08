@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>CleanArchitectureiOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -38,6 +43,16 @@
 			<true/>
 		</dict>
 		<key>A346F68F2E4AF98A004C768B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A3DBEDE42E6EA4AB003D1E33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A3DBEDEC2E6EA4AB003D1E33</key>
 		<dict>
 			<key>primary</key>
 			<true/>

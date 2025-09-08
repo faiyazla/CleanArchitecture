@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "B29CF47C-4F34-4804-8FE3-DF5A19D4900A",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:CleanArchitecture.xcodeproj",
+          "identifier" : "A3DBEDE42E6EA4AB003D1E33",
+          "name" : "CleanArchitectureiOS"
+        }
+      ]
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CleanArchitecture.xcodeproj",
+        "identifier" : "A3DBEDEC2E6EA4AB003D1E33",
+        "name" : "CleanArchitectureiOSTests"
+      }
+    }
+  ],
+  "version" : 1
+}
