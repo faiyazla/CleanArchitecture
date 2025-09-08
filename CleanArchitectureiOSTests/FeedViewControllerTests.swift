@@ -8,7 +8,7 @@
 import XCTest
 import UIKit
 
-class FeedViewController: UIViewController {
+final class FeedViewController: UIViewController {
     
     private var loader: FeedViewControllerTests.LoaderSpy?
     
