@@ -9,17 +9,24 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:CleanArchitecture.xcodeproj",
+          "identifier" : "A346F6862E4AF98A004C768B",
+          "name" : "CleanArchitecture"
+        },
+        {
+          "containerPath" : "container:CleanArchitecture.xcodeproj",
+          "identifier" : "A3DBEDE42E6EA4AB003D1E33",
+          "name" : "CleanArchitectureiOS"
+        }
+      ]
+    },
+    "testExecutionOrdering" : "random",
     "threadSanitizerEnabled" : true
   },
   "testTargets" : [
-    {
-      "target" : {
-        "containerPath" : "container:CleanArchitecture.xcodeproj",
-        "identifier" : "A346F68F2E4AF98A004C768B",
-        "name" : "CleanArchitectureTests"
-      }
-    },
     {
       "target" : {
         "containerPath" : "container:CleanArchitecture.xcodeproj",
@@ -30,8 +37,22 @@
     {
       "target" : {
         "containerPath" : "container:CleanArchitecture.xcodeproj",
+        "identifier" : "A346F68F2E4AF98A004C768B",
+        "name" : "CleanArchitectureTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:CleanArchitecture.xcodeproj",
         "identifier" : "A340D07C2E684A580062F463",
         "name" : "CleanArchitectureCacheIntegrationTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:CleanArchitecture.xcodeproj",
+        "identifier" : "A3DBEDEC2E6EA4AB003D1E33",
+        "name" : "CleanArchitectureiOSTests"
       }
     }
   ],
