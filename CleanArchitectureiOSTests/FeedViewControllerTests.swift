@@ -9,10 +9,11 @@ import XCTest
 import UIKit
 import CleanArchitecture
 
-final class FeedViewController: UIViewController {
+final class FeedViewController: UITableViewController {
     
     private var loader: FeedLoader?
-    
+    private var onViewIsAppearing: ((FeedViewController) -> Void)?
+        
     convenience init(loader: FeedLoader) {
         self.init()
         self.loader = loader
@@ -21,9 +22,33 @@ final class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loader?.load { _ in }
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(load), for: .valueChanged)
+        onViewIsAppearing = { vc in
+            vc.refresh()
+            vc.refreshControl?.addTarget(vc, action: #selector(vc.refresh), for: .valueChanged)
+            vc.onViewIsAppearing = nil
+        }
+        load()
+    }
+    
+    public override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        
+        onViewIsAppearing?(self)
+    }
+    
+    @objc func load() {
+        loader?.load  { _ in
+            self.refreshControl?.endRefreshing()
+        }
+    }
+    
+    @objc func refresh() {
+        refreshControl?.beginRefreshing()
     }
 }
+
 
 final class FeedViewControllerTests: XCTestCase {
 
@@ -39,6 +64,18 @@ final class FeedViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         
         XCTAssertEqual(loader.loadCallCount, 1)
+    }
+    
+    func test_pullToRefresh_loadsFeed() {
+        let (sut, loader) = makeSUT()
+        sut.loadViewIfNeeded()
+        
+        sut.refreshControl?.allTargets.forEach { target in
+            sut.refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { (target as NSObject).perform(Selector($0))
+            }
+        }
+        
+        XCTAssertEqual(loader.loadCallCount, 2)
     }
 
     //MARK: - Helpers
