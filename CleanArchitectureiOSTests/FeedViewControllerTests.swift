@@ -174,7 +174,7 @@ private extension UIRefreshControl {
     func simulatePullToRefresh() {
         allTargets.forEach { target in
             actions(forTarget: target, forControlEvent: .valueChanged)?.forEach {
-                (target as AnyObject).perform(Selector($0))
+                _ = (target as AnyObject).perform(Selector($0))
             }
         }
     }
