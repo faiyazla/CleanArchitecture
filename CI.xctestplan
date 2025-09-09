@@ -49,6 +49,7 @@
       }
     },
     {
+      "enabled" : false,
       "target" : {
         "containerPath" : "container:CleanArchitecture.xcodeproj",
         "identifier" : "A3DBEDEC2E6EA4AB003D1E33",

@@ -10,6 +10,8 @@
 		A340D0812E684A580062F463 /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; };
 		A346F6912E4AF98A004C768B /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; };
 		A3DBEDEE2E6EA4AB003D1E33 /* CleanArchitectureiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3DBEDE52E6EA4AB003D1E33 /* CleanArchitectureiOS.framework */; };
+		A3DBF1602E6FF652003D1E33 /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; platformFilter = ios; };
+		A3DBF1612E6FF652003D1E33 /* CleanArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A3FF09DA2E56E4AF0088CEFF /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,13 @@
 			remoteGlobalIDString = A3DBEDE42E6EA4AB003D1E33;
 			remoteInfo = CleanArchitectureiOS;
 		};
+		A3DBF1622E6FF652003D1E33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A346F67E2E4AF989004C768B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A346F6862E4AF98A004C768B;
+			remoteInfo = CleanArchitecture;
+		};
 		A3FF09DB2E56E4AF0088CEFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A346F67E2E4AF989004C768B /* Project object */;
@@ -44,6 +53,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A3DBF1642E6FF652003D1E33 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A3DBF1612E6FF652003D1E33 /* CleanArchitecture.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A340D07D2E684A580062F463 /* CleanArchitectureCacheIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureCacheIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A340D0872E684A960062F463 /* CleanArchitectureCacheIntegrationTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitectureCacheIntegrationTests.xctestplan; sourceTree = "<group>"; };
@@ -52,6 +75,8 @@
 		A3DBEDE52E6EA4AB003D1E33 /* CleanArchitectureiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanArchitectureiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3DBEDED2E6EA4AB003D1E33 /* CleanArchitectureiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3DBEDFA2E6EA4BC003D1E33 /* CleanArchitectureiOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitectureiOS.xctestplan; sourceTree = "<group>"; };
+		A3DBF1652E6FF7A6003D1E33 /* CI_macOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = CI_macOS.xctestplan; path = ../CI_macOS.xctestplan; sourceTree = "<group>"; };
+		A3DBF1662E6FF7C5003D1E33 /* CI_iOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = CI_iOS.xctestplan; path = ../CI_iOS.xctestplan; sourceTree = "<group>"; };
 		A3FF09D12E56D0EC0088CEFF /* CleanArchitecture.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitecture.xctestplan; sourceTree = "<group>"; };
 		A3FF09D62E56E4AF0088CEFF /* CleanArchitectureAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FF09E02E56E5640088CEFF /* CleanArchitectureAPIEndToEndTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitectureAPIEndToEndTests.xctestplan; sourceTree = "<group>"; };
@@ -151,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3DBF1602E6FF652003D1E33 /* CleanArchitecture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +205,8 @@
 				A3DBEDFA2E6EA4BC003D1E33 /* CleanArchitectureiOS.xctestplan */,
 				A340D0872E684A960062F463 /* CleanArchitectureCacheIntegrationTests.xctestplan */,
 				A3FF09E32E56E6FD0088CEFF /* CI.xctestplan */,
+				A3DBF1652E6FF7A6003D1E33 /* CI_macOS.xctestplan */,
+				A3DBF1662E6FF7C5003D1E33 /* CI_iOS.xctestplan */,
 				A3FF09E02E56E5640088CEFF /* CleanArchitectureAPIEndToEndTests.xctestplan */,
 				A3FF09D12E56D0EC0088CEFF /* CleanArchitecture.xctestplan */,
 				A346F6892E4AF98A004C768B /* CleanArchitecture */,
@@ -187,6 +215,7 @@
 				A340D07E2E684A580062F463 /* CleanArchitectureCacheIntegrationTests */,
 				A3DBEDE62E6EA4AB003D1E33 /* CleanArchitectureiOS */,
 				A3DBEDF12E6EA4AB003D1E33 /* CleanArchitectureiOSTests */,
+				A3DBF15F2E6FF652003D1E33 /* Frameworks */,
 				A346F6882E4AF98A004C768B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -202,6 +231,13 @@
 				A3DBEDED2E6EA4AB003D1E33 /* CleanArchitectureiOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A3DBF15F2E6FF652003D1E33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,10 +337,12 @@
 				A3DBEDE12E6EA4AB003D1E33 /* Sources */,
 				A3DBEDE22E6EA4AB003D1E33 /* Frameworks */,
 				A3DBEDE32E6EA4AB003D1E33 /* Resources */,
+				A3DBF1642E6FF652003D1E33 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A3DBF1632E6FF652003D1E33 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				A3DBEDE62E6EA4AB003D1E33 /* CleanArchitectureiOS */,
@@ -524,6 +562,12 @@
 			isa = PBXTargetDependency;
 			target = A3DBEDE42E6EA4AB003D1E33 /* CleanArchitectureiOS */;
 			targetProxy = A3DBEDEF2E6EA4AB003D1E33 /* PBXContainerItemProxy */;
+		};
+		A3DBF1632E6FF652003D1E33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = A346F6862E4AF98A004C768B /* CleanArchitecture */;
+			targetProxy = A3DBF1622E6FF652003D1E33 /* PBXContainerItemProxy */;
 		};
 		A3FF09DC2E56E4AF0088CEFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
