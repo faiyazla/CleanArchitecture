@@ -1,10 +1,10 @@
 {
   "configurations" : [
     {
-      "id" : "1CCBF1FB-2FB4-431C-9D89-EEE007429FE2",
-      "name" : "Test Scheme Action",
+      "id" : "DD3EAD08-7769-4C9F-8531-5BD1EA8C490B",
+      "name" : "Configuration 1",
       "options" : {
-        "testExecutionOrdering" : "random"
+
       }
     }
   ],
@@ -23,8 +23,7 @@
         }
       ]
     },
-    "testExecutionOrdering" : "random",
-    "threadSanitizerEnabled" : true
+    "testExecutionOrdering" : "random"
   },
   "testTargets" : [
     {
@@ -37,8 +36,8 @@
     {
       "target" : {
         "containerPath" : "container:CleanArchitecture.xcodeproj",
-        "identifier" : "A346F68F2E4AF98A004C768B",
-        "name" : "CleanArchitectureTests"
+        "identifier" : "A3DBEDEC2E6EA4AB003D1E33",
+        "name" : "CleanArchitectureiOSTests"
       }
     },
     {
@@ -51,8 +50,8 @@
     {
       "target" : {
         "containerPath" : "container:CleanArchitecture.xcodeproj",
-        "identifier" : "A3DBEDEC2E6EA4AB003D1E33",
-        "name" : "CleanArchitectureiOSTests"
+        "identifier" : "A346F68F2E4AF98A004C768B",
+        "name" : "CleanArchitectureTests"
       }
     }
   ],

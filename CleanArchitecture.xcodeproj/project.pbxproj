@@ -72,11 +72,11 @@
 		A340D0872E684A960062F463 /* CleanArchitectureCacheIntegrationTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitectureCacheIntegrationTests.xctestplan; sourceTree = "<group>"; };
 		A346F6872E4AF98A004C768B /* CleanArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A346F6902E4AF98A004C768B /* CleanArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A34AB6932E6FFB21001C19C1 /* CI_macOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI_macOS.xctestplan; sourceTree = "<group>"; };
+		A34AB6942E6FFB4C001C19C1 /* CI_iOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI_iOS.xctestplan; sourceTree = "<group>"; };
 		A3DBEDE52E6EA4AB003D1E33 /* CleanArchitectureiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanArchitectureiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3DBEDED2E6EA4AB003D1E33 /* CleanArchitectureiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3DBEDFA2E6EA4BC003D1E33 /* CleanArchitectureiOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitectureiOS.xctestplan; sourceTree = "<group>"; };
-		A3DBF1652E6FF7A6003D1E33 /* CI_macOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = CI_macOS.xctestplan; path = ../CI_macOS.xctestplan; sourceTree = "<group>"; };
-		A3DBF1662E6FF7C5003D1E33 /* CI_iOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = CI_iOS.xctestplan; path = ../CI_iOS.xctestplan; sourceTree = "<group>"; };
 		A3FF09D12E56D0EC0088CEFF /* CleanArchitecture.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitecture.xctestplan; sourceTree = "<group>"; };
 		A3FF09D62E56E4AF0088CEFF /* CleanArchitectureAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FF09E02E56E5640088CEFF /* CleanArchitectureAPIEndToEndTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitectureAPIEndToEndTests.xctestplan; sourceTree = "<group>"; };
@@ -202,11 +202,11 @@
 		A346F67D2E4AF989004C768B = {
 			isa = PBXGroup;
 			children = (
+				A34AB6932E6FFB21001C19C1 /* CI_macOS.xctestplan */,
+				A34AB6942E6FFB4C001C19C1 /* CI_iOS.xctestplan */,
 				A3DBEDFA2E6EA4BC003D1E33 /* CleanArchitectureiOS.xctestplan */,
 				A340D0872E684A960062F463 /* CleanArchitectureCacheIntegrationTests.xctestplan */,
 				A3FF09E32E56E6FD0088CEFF /* CI.xctestplan */,
-				A3DBF1652E6FF7A6003D1E33 /* CI_macOS.xctestplan */,
-				A3DBF1662E6FF7C5003D1E33 /* CI_iOS.xctestplan */,
 				A3FF09E02E56E5640088CEFF /* CleanArchitectureAPIEndToEndTests.xctestplan */,
 				A3FF09D12E56D0EC0088CEFF /* CleanArchitecture.xctestplan */,
 				A346F6892E4AF98A004C768B /* CleanArchitecture */,
