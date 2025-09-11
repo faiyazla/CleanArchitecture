@@ -173,15 +173,21 @@ final class FeedViewControllerTests: XCTestCase {
         
         //MARK: Feed Image Data Loader
         
+        private struct Task: FeedImageDataLoaderTask {
+            let callback: () -> Void
+            
+            func cancel() {
+                callback()
+            }
+        }
+        
         private(set) var loadedImageURLs = [URL]()
         private(set) var cancelledImageURLs = [URL]()
         
-        func loadImageData(from url: URL) {
+        func loadImageData(from url: URL) -> FeedImageDataLoaderTask {
             loadedImageURLs.append(url)
-        }
-        
-        func cancelImageData(from url: URL) {
-            cancelledImageURLs.append(url)
+            return Task { [weak self] in
+                self?.cancelledImageURLs.append(url)}
         }
     }
 }
