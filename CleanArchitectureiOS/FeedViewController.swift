@@ -12,6 +12,7 @@ final public class FeedViewController: UITableViewController {
     
     private var loader: FeedLoader?
     private var onViewIsAppearing: ((FeedViewController) -> Void)?
+    private var tableModel = [FeedImage]()
         
     public convenience init(loader: FeedLoader) {
         self.init()
@@ -37,7 +38,9 @@ final public class FeedViewController: UITableViewController {
     }
     
     @objc func load() {
-        loader?.load  { [weak self]  _ in
+        loader?.load  { [weak self] result in
+            self?.tableModel = (try? result.get()) ?? []
+            self?.tableView.reloadData()
             self?.refreshControl?.endRefreshing()
         }
     }
@@ -46,60 +49,17 @@ final public class FeedViewController: UITableViewController {
         refreshControl?.beginRefreshing()
         load()
     }
-}
-public extension FeedViewController {
     
-    func simulateAppearance() {
-        if !isViewLoaded {
-            loadViewIfNeeded()
-            replaceRefreshControlWithFakeOrIOS17Support()
-        }
-        beginAppearanceTransition(true, animated: false)//viewWillAppear
-        endAppearanceTransition() //viewIsAppearing+viewDidAppear
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableModel.count
     }
     
-    func replaceRefreshControlWithFakeOrIOS17Support() {
-        let fake = FakeRefreshControl()
-        refreshControl?.allTargets.forEach { target in
-            refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach {
-                action in
-                fake.addTarget(target, action: Selector(action), for: .valueChanged)
-            }
-        }
-        refreshControl = fake
-    }
-}
-
-public extension FeedViewController {
-    func simulateUserInitiatedFeedReload() {
-        refreshControl?.simulatePullToRefresh()
-    }
-    
-    var isShowingLoadingIndicator: Bool {
-        refreshControl?.isRefreshing == true
-    }
-}
-
-private extension UIRefreshControl {
-    
-    func simulatePullToRefresh() {
-        allTargets.forEach { target in
-            actions(forTarget: target, forControlEvent: .valueChanged)?.forEach {
-                _ = (target as AnyObject).perform(Selector($0))
-            }
-        }
-    }
-}
-private class FakeRefreshControl: UIRefreshControl {
-    private var _isRefreshing = false
-    
-    override var isRefreshing: Bool { _isRefreshing }
-    
-    override func beginRefreshing() {
-        _isRefreshing = true
-    }
-    
-    override func endRefreshing() {
-        _isRefreshing = false
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellModel = tableModel[indexPath.row]
+        let cell = FeedImageCell()
+        cell.locationContainer.isHidden = (cellModel.location == nil)
+        cell.locationLabel.text = cellModel.location
+        cell.descriptionLabel.text = cellModel.description
+        return cell
     }
 }
