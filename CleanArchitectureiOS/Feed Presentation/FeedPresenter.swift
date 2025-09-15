@@ -7,14 +7,6 @@
 
 import CleanArchitecture
 
-struct FeedLoadingViewModel {
-    let isLoading: Bool
-}
-
-struct FeedViewModel {
-    let feed: [FeedImage]
-}
-
 protocol FeedLoadingView {
     func display(_ viewModel: FeedLoadingViewModel)
 }
