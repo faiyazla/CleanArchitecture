@@ -71,13 +71,28 @@ Location</string>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qv2-z3-oby">
                                                             <rect key="frame" x="0.0" y="0.0" width="353" height="353"/>
                                                         </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gl1-Wq-U1B">
+                                                            <rect key="frame" x="0.0" y="0.0" width="353" height="353"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="↻">
+                                                                <fontDescription key="titleFontDescription" type="system" pointSize="64"/>
+                                                            </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="retryButtonTapped" destination="e7B-QK-W6U" eventType="touchUpInside" id="Gyk-my-Byv"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="qv2-z3-oby" secondAttribute="trailing" id="0wH-Ov-Yu7"/>
                                                         <constraint firstItem="qv2-z3-oby" firstAttribute="leading" secondItem="UNN-9D-8KI" secondAttribute="leading" id="5Gw-jI-Y9P"/>
                                                         <constraint firstAttribute="bottom" secondItem="qv2-z3-oby" secondAttribute="bottom" id="YrW-eV-V7A"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Gl1-Wq-U1B" secondAttribute="bottom" id="ZQB-tb-m9l"/>
+                                                        <constraint firstItem="Gl1-Wq-U1B" firstAttribute="leading" secondItem="UNN-9D-8KI" secondAttribute="leading" id="bxv-r4-kUl"/>
                                                         <constraint firstAttribute="width" secondItem="UNN-9D-8KI" secondAttribute="height" multiplier="1:1" id="f3c-7j-0iD"/>
+                                                        <constraint firstItem="Gl1-Wq-U1B" firstAttribute="top" secondItem="UNN-9D-8KI" secondAttribute="top" id="g7V-pF-4zm"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Gl1-Wq-U1B" secondAttribute="trailing" id="gYf-oM-ffK"/>
                                                         <constraint firstItem="qv2-z3-oby" firstAttribute="top" secondItem="UNN-9D-8KI" secondAttribute="top" id="pju-Ag-7if"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -110,6 +125,7 @@ Location</string>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="9a1-z2-oAg" id="kSV-Q2-JZ3"/>
                                     <outlet property="feedImageContainer" destination="UNN-9D-8KI" id="Px7-qo-SDl"/>
+                                    <outlet property="feedImageRetryButton" destination="Gl1-Wq-U1B" id="4hQ-gQ-6PG"/>
                                     <outlet property="feedImageView" destination="qv2-z3-oby" id="6M9-fw-qhp"/>
                                     <outlet property="locationContainer" destination="PdY-oH-5Vn" id="OQU-Af-ch9"/>
                                     <outlet property="locationLabel" destination="sJb-Xv-lbP" id="CqQ-gg-9Y8"/>
