@@ -1,5 +1,5 @@
 //
-//  FeedViewControllerTests.swift
+//  FeedUIIntegrationTests.swift
 //  CleanArchitectureiOSTests
 //
 //  Created by Faiyaz Ahmed on 08/09/2025.
@@ -11,7 +11,7 @@ import CleanArchitecture
 import CleanArchitectureiOS
 
 
-final class FeedViewControllerTests: XCTestCase {
+final class FeedUIIntegrationTests: XCTestCase {
 
     func test_feedView_hasTitle() {
         let (sut, _) = makeSUT()
