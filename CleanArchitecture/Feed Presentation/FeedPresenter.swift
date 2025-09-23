@@ -19,10 +19,6 @@ public struct FeedErrorViewModel {
     }
 }
 
-public struct FeedLoadingViewModel {
-    public let isLoading: Bool
-}
-
 public struct FeedViewModel {
     public let feed: [FeedImage]
 }
