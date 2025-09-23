@@ -51,6 +51,13 @@ final class FeedPresenter {
         self.feedView = feedView
     }
     
+    private var feedLoadError: String {
+        return NSLocalizedString("FEED_VIEW_CONNECTION_ERROR",
+             tableName: "Feed",
+             bundle: Bundle(for: FeedPresenter.self),
+             comment: "Error message displayed when we can't load the image feed from the server")
+    }
+    
     func didStartLoadingFeed() {
         errorView.display(.noError)
         loadingView.display(FeedLoadingViewModel(isLoading: true))
@@ -59,6 +66,11 @@ final class FeedPresenter {
     func didFinishLoadingFeed(with feed: [FeedImage]) {
         loadingView.display(FeedLoadingViewModel(isLoading: false))
         feedView.display(FeedViewModel(feed: feed))
+    }
+    
+    func didFinishLoadingFeed(with error: Error) {
+        errorView.display(.error(message: feedLoadError))
+        loadingView.display(FeedLoadingViewModel(isLoading: false))
     }
 }
 
@@ -89,6 +101,17 @@ final class FeedPresenterTests: XCTestCase {
         ])
     }
     
+    func test_didFinishLoadingFeed_diplaysLocalizedErrorMessageAndStopsLoading() {
+        let (sut, view) = makeSUT()
+        
+        sut.didFinishLoadingFeed(with: anyNSError())
+        
+        XCTAssertEqual(view.messages, [
+            .display(isLoading: false),
+            .display(errorMessage: localized("FEED_VIEW_CONNECTION_ERROR"))
+        ])
+    }
+    
     
     //MARK: Helpers
     
@@ -100,6 +123,16 @@ final class FeedPresenterTests: XCTestCase {
        trackForMemoryLeaks(sut, file: file, line: line)
        return (sut, view)
    }
+    
+    private func localized(_ key: String, file: StaticString = #file, line: UInt = #line) -> String {
+        let table = "Feed"
+        let bundle = Bundle(for: FeedPresenter.self)
+        let value = bundle.localizedString(forKey: key, value: nil, table: table)
+        if value == key {
+            XCTFail("Missing localized string for key: \(key) in table: \(table)", file: file, line: line)
+        }
+        return value
+    }
     
     final class ViewSpy: FeedErrorView, FeedLoadingView, FeedView {
         var messages = Set<Message>()
