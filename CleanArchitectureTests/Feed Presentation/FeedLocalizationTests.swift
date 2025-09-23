@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import CleanArchitectureiOS
+import CleanArchitecture
 
 final class FeedLocalizationTests: XCTestCase {
 
