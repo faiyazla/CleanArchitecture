@@ -84,20 +84,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		A32FF3402E826B3E00B72508 /* Exceptions for "CleanArchitecture" folder in "CleanArchitecture" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Fead Feature/FeedImageDataLoader.swift",
-			);
-			target = A346F6862E4AF98A004C768B /* CleanArchitecture */;
-		};
-		A32FF3412E826B3E00B72508 /* Exceptions for "CleanArchitecture" folder in "CleanArchitectureiOS" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Fead Feature/FeedImageDataLoader.swift",
-			);
-			target = A3DBEDE42E6EA4AB003D1E33 /* CleanArchitectureiOS */;
-		};
 		A340D0892E684BC10062F463 /* Exceptions for "CleanArchitectureTests" folder in "CleanArchitectureCacheIntegrationTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -132,10 +118,6 @@
 		};
 		A346F6892E4AF98A004C768B /* CleanArchitecture */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				A32FF3402E826B3E00B72508 /* Exceptions for "CleanArchitecture" folder in "CleanArchitecture" target */,
-				A32FF3412E826B3E00B72508 /* Exceptions for "CleanArchitecture" folder in "CleanArchitectureiOS" target */,
-			);
 			path = CleanArchitecture;
 			sourceTree = "<group>";
 		};
