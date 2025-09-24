@@ -10,6 +10,9 @@ import Foundation
 public protocol FeedImageDataStore {
     typealias Result = Swift.Result<Data?, Error>
     func retrieve(dataForURL url: URL, completion: @escaping (Result) -> Void)
+    
+    typealias InsertionResult = Swift.Result<Void, Error>
+    func insert(_ data: Data, for url: URL, completion: @escaping (InsertionResult) -> Void)
 }
 
 public final class LocalFeedImageDataLoader {
@@ -55,5 +58,10 @@ public final class LocalFeedImageDataLoader {
                 .flatMap { data in data.map { .success($0) } ?? .failure(Error.notFound)  })
         }
         return task
+    }
+    public typealias SaveResult = Result<Void, Swift.Error>
+    
+    public func save(_ data: Data, for url: URL, completion: @escaping (SaveResult) -> Void) {
+        store.insert(data, for: url) { _ in }
     }
 }
