@@ -20,12 +20,24 @@
           "containerPath" : "container:CleanArchitecture.xcodeproj",
           "identifier" : "A3DBEDE42E6EA4AB003D1E33",
           "name" : "CleanArchitectureiOS"
+        },
+        {
+          "containerPath" : "container:CleanArchitectureApp\/CleanArchitectureApp.xcodeproj",
+          "identifier" : "A32FF5A02E84DB0700B72508",
+          "name" : "CleanArchitectureApp"
         }
       ]
     },
     "testExecutionOrdering" : "random"
   },
   "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CleanArchitectureApp\/CleanArchitectureApp.xcodeproj",
+        "identifier" : "A32FF5B62E84DB0800B72508",
+        "name" : "CleanArchitectureAppTests"
+      }
+    },
     {
       "parallelizable" : false,
       "target" : {
