@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A32FF8822E84DC9F00B72508 /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A32FF8802E84DC9F00B72508 /* CleanArchitecture.framework */; };
+		A32FF8832E84DC9F00B72508 /* CleanArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A32FF8802E84DC9F00B72508 /* CleanArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A32FF8842E84DC9F00B72508 /* CleanArchitectureiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A32FF8812E84DC9F00B72508 /* CleanArchitectureiOS.framework */; };
+		A32FF8852E84DC9F00B72508 /* CleanArchitectureiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A32FF8812E84DC9F00B72508 /* CleanArchitectureiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A32FF5B82E84DB0800B72508 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -23,10 +30,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A32FF8862E84DC9F00B72508 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A32FF8832E84DC9F00B72508 /* CleanArchitecture.framework in Embed Frameworks */,
+				A32FF8852E84DC9F00B72508 /* CleanArchitectureiOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A32FF5A12E84DB0700B72508 /* CleanArchitectureApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanArchitectureApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32FF5B72E84DB0800B72508 /* CleanArchitectureAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32FF5C12E84DB0800B72508 /* CleanArchitectureAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A32FF8802E84DC9F00B72508 /* CleanArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CleanArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A32FF8812E84DC9F00B72508 /* CleanArchitectureiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CleanArchitectureiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -65,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A32FF8822E84DC9F00B72508 /* CleanArchitecture.framework in Frameworks */,
+				A32FF8842E84DC9F00B72508 /* CleanArchitectureiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +117,7 @@
 				A32FF5A32E84DB0700B72508 /* CleanArchitectureApp */,
 				A32FF5BA2E84DB0800B72508 /* CleanArchitectureAppTests */,
 				A32FF5C42E84DB0800B72508 /* CleanArchitectureAppUITests */,
+				A32FF87F2E84DC9F00B72508 /* Frameworks */,
 				A32FF5A22E84DB0700B72508 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +132,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A32FF87F2E84DC9F00B72508 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A32FF8802E84DC9F00B72508 /* CleanArchitecture.framework */,
+				A32FF8812E84DC9F00B72508 /* CleanArchitectureiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +151,7 @@
 				A32FF59D2E84DB0700B72508 /* Sources */,
 				A32FF59E2E84DB0700B72508 /* Frameworks */,
 				A32FF59F2E84DB0700B72508 /* Resources */,
+				A32FF8862E84DC9F00B72508 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
