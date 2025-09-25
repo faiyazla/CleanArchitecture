@@ -96,12 +96,23 @@ final class CleanArchitectureCacheIntegrationTests: XCTestCase {
         expect(feedLoaderToPerformSave, toLoad: feed)
     }
     
+    func test_validateFeedCache_deletesFeedSavedInADistantPast() {
+        let feedLoaderToPerformSave = makeFeedLoader(currentDate: .distantPast)
+        let feedLoaderToPerformValidation = makeFeedLoader(currentDate: Date())
+        let feed = uniqueImageFeed().models
+
+        save(feed, with: feedLoaderToPerformSave)
+        validateCache(with: feedLoaderToPerformValidation)
+
+        expect(feedLoaderToPerformSave, toLoad: [])
+    }
+    
     //MARK: Helpers
     
-    private func makeFeedLoader(file: StaticString = #file, line: UInt = #line) -> LocalFeedLoader {
+    private func makeFeedLoader(currentDate: Date = Date(), file: StaticString = #file, line: UInt = #line) -> LocalFeedLoader {
         let storeURL = testSpecificStoreURL()
         let store = try! CoreDataFeedStore(storeURL: storeURL)
-        let sut = LocalFeedLoader(store: store, currentDate: Date.init)
+        let sut = LocalFeedLoader(store: store, currentDate: { currentDate })
         trackForMemoryLeaks(store)
         trackForMemoryLeaks(sut)
         return sut
@@ -143,14 +154,14 @@ final class CleanArchitectureCacheIntegrationTests: XCTestCase {
     }
     
     private func save(_ feed: [FeedImage], with loader: LocalFeedLoader, file: StaticString = #file, line: UInt = #line) {
-        let exp = expectation(description: "Wait for save completion")
+        let saveExp = expectation(description: "Wait for save completion")
         loader.save(feed) { result in
             if case let Result.failure(error) = result {
                 XCTFail("Expected to save feed successfully, got error: \(error)", file: file, line: line)
             }
-            exp.fulfill()
+            saveExp.fulfill()
         }
-        wait(for: [exp], timeout: 1.0)
+        wait(for: [saveExp], timeout: 1.0)
     }
     
     private func save(_ data: Data, for url: URL, with loader: LocalFeedImageDataLoader, file: StaticString = #file, line: UInt = #line) {
