@@ -1,5 +1,5 @@
 //
-//  FeedViewControllerTests+LoaderSpy.swift
+//  FeedViewControllerTests+FeedImageDataLoaderSpy.swift
 //  CleanArchitecture
 //
 //  Created by Faiyaz Ahmed on 13/09/2025.
