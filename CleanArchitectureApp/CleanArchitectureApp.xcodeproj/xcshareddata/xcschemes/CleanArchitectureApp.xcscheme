@@ -57,6 +57,17 @@
                ReferencedContainer = "container:CleanArchitectureApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A30A3B432E8A4363004E0CB7"
+               BuildableName = "CleanArchitectureAppUIAcceptanceTests.xctest"
+               BlueprintName = "CleanArchitectureAppUIAcceptanceTests"
+               ReferencedContainer = "container:CleanArchitectureApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
