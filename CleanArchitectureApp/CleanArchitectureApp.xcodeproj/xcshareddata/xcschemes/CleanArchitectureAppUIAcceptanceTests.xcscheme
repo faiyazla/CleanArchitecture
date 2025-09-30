@@ -11,15 +11,20 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:../../CleanArchitectureAppUIAcceptanceTests.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+      </TestPlans>
       <Testables>
          <TestableReference
             skipped = "NO"
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A30A3B432E8A4363004E0CB7"
+               BlueprintIdentifier = "A30A3B572E8A4AD5004E0CB7"
                BuildableName = "CleanArchitectureAppUIAcceptanceTests.xctest"
                BlueprintName = "CleanArchitectureAppUIAcceptanceTests"
                ReferencedContainer = "container:CleanArchitectureApp.xcodeproj">
