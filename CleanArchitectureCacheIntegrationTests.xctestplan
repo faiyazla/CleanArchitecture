@@ -13,7 +13,7 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
+      "parallelizable" : false,
       "target" : {
         "containerPath" : "container:CleanArchitecture.xcodeproj",
         "identifier" : "A340D07C2E684A580062F463",

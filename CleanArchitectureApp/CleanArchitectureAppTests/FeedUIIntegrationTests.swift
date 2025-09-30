@@ -9,6 +9,7 @@ import XCTest
 import UIKit
 import CleanArchitecture
 import CleanArchitectureiOS
+import CleanArchitectureApp
 
 
 final class FeedUIIntegrationTests: XCTestCase {

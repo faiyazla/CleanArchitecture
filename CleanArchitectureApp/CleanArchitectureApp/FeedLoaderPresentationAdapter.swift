@@ -6,6 +6,7 @@
 //
 
 import CleanArchitecture
+import CleanArchitectureiOS
 
 final class FeedLoaderPresentationAdapter: FeedViewControllerDelegate {
     private let feedLoader: FeedLoader

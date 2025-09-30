@@ -7,6 +7,7 @@
 
 import CleanArchitecture
 import UIKit
+import CleanArchitectureiOS
 
 public final class FeedUIComposer {
     private init() {}

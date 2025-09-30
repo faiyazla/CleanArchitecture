@@ -136,11 +136,6 @@
 			path = CleanArchitectureiOS;
 			sourceTree = "<group>";
 		};
-		A3DBEDF12E6EA4AB003D1E33 /* CleanArchitectureiOSTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CleanArchitectureiOSTests;
-			sourceTree = "<group>";
-		};
 		A3FF09D72E56E4AF0088CEFF /* CleanArchitectureAPIEndToEndTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CleanArchitectureAPIEndToEndTests;
@@ -214,7 +209,6 @@
 				A3FF09D72E56E4AF0088CEFF /* CleanArchitectureAPIEndToEndTests */,
 				A340D07E2E684A580062F463 /* CleanArchitectureCacheIntegrationTests */,
 				A3DBEDE62E6EA4AB003D1E33 /* CleanArchitectureiOS */,
-				A3DBEDF12E6EA4AB003D1E33 /* CleanArchitectureiOSTests */,
 				A3DBF15F2E6FF652003D1E33 /* Frameworks */,
 				A346F6882E4AF98A004C768B /* Products */,
 			);
@@ -366,9 +360,6 @@
 			);
 			dependencies = (
 				A3DBEDF02E6EA4AB003D1E33 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				A3DBEDF12E6EA4AB003D1E33 /* CleanArchitectureiOSTests */,
 			);
 			name = CleanArchitectureiOSTests;
 			packageProductDependencies = (

@@ -7,7 +7,6 @@
 
 import UIKit
 import CleanArchitecture
-import CleanArchitectureiOS
 import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
