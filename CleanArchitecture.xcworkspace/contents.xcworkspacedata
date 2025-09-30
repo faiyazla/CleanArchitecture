@@ -10,7 +10,4 @@
    <FileRef
       location = "group:../CleanArchitectureApp.xctestplan">
    </FileRef>
-   <FileRef
-      location = "group:../CleanArchitectureAppUIAcceptanceTests.xctestplan">
-   </FileRef>
 </Workspace>
