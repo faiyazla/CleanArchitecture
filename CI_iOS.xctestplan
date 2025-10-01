@@ -43,7 +43,7 @@
       "parallelizable" : false,
       "target" : {
         "containerPath" : "container:CleanArchitecture.xcodeproj",
-        "identifier" : "A3DBEDEC2E6EA4AB003D1E33",
+        "identifier" : "A30A3D6C2E8CE69F004E0CB7",
         "name" : "CleanArchitectureiOSTests"
       }
     }

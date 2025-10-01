@@ -31,7 +31,7 @@
       "parallelizable" : false,
       "target" : {
         "containerPath" : "container:CleanArchitecture.xcodeproj",
-        "identifier" : "A3DBEDEC2E6EA4AB003D1E33",
+        "identifier" : "A30A3D6C2E8CE69F004E0CB7",
         "name" : "CleanArchitectureiOSTests"
       }
     },
@@ -57,13 +57,6 @@
         "containerPath" : "container:CleanArchitecture.xcodeproj",
         "identifier" : "A340D07C2E684A580062F463",
         "name" : "CleanArchitectureCacheIntegrationTests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:CleanArchitectureApp\/CleanArchitectureApp.xcodeproj",
-        "identifier" : "A30A3B572E8A4AD5004E0CB7",
-        "name" : "CleanArchitectureAppUIAcceptanceTests"
       }
     },
     {
