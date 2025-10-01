@@ -20,21 +20,24 @@ struct SnapshotConfiguration {
     let traitCollection: UITraitCollection
 
     static func iPhone16Pro(style: UIUserInterfaceStyle) -> SnapshotConfiguration {
+        let traits = UITraitCollection(mutations: {
+            $0.forceTouchCapability = .unavailable
+            $0.layoutDirection = .leftToRight
+            $0.preferredContentSizeCategory = .medium
+            $0.userInterfaceIdiom = .phone
+            $0.horizontalSizeClass = .compact
+            $0.verticalSizeClass = .regular
+            $0.displayScale = 3
+            $0.displayGamut = .P3
+            $0.userInterfaceStyle = style
+        })
+        
         return SnapshotConfiguration(
             size: CGSize(width: 393, height: 852),
             safeAreaInsets: UIEdgeInsets(top: 59, left: 0, bottom: 34, right: 0),
             layoutMargins: UIEdgeInsets(top: 20, left: 16, bottom: 0, right: 16),
-            traitCollection: UITraitCollection(traitsFrom: [
-                .init(forceTouchCapability: .unavailable), // no 3D Touch anymore
-                .init(layoutDirection: .leftToRight),
-                .init(preferredContentSizeCategory: .medium),
-                .init(userInterfaceIdiom: .phone),
-                .init(horizontalSizeClass: .compact),
-                .init(verticalSizeClass: .regular),
-                .init(displayScale: 3),
-                .init(displayGamut: .P3),
-                .init(userInterfaceStyle: style)
-            ]))
+            traitCollection: traits
+        )
     }
 }
 
@@ -55,7 +58,18 @@ private final class SnapshotWindow: UIWindow {
     }
 
     override var traitCollection: UITraitCollection {
-        return UITraitCollection(traitsFrom: [super.traitCollection, configuration.traitCollection])
+        return super.traitCollection.modifyingTraits { traits in
+            let configTraits = configuration.traitCollection
+            traits.userInterfaceStyle = configTraits.userInterfaceStyle
+            traits.displayScale = configTraits.displayScale
+            traits.displayGamut = configTraits.displayGamut
+            traits.userInterfaceIdiom = configTraits.userInterfaceIdiom
+            traits.layoutDirection = configTraits.layoutDirection
+            traits.horizontalSizeClass = configTraits.horizontalSizeClass
+            traits.verticalSizeClass = configTraits.verticalSizeClass
+            traits.preferredContentSizeCategory = configTraits.preferredContentSizeCategory
+            traits.forceTouchCapability = configTraits.forceTouchCapability
+        }
     }
 
     func snapshot() -> UIImage {
