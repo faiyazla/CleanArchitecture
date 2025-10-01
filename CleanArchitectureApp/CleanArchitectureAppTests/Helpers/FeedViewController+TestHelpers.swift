@@ -19,6 +19,15 @@ public extension FeedViewController {
         endAppearanceTransition() //viewIsAppearing+viewDidAppear
     }
     
+    func prepareForFirstAppearance() {
+        setSmallFrameToPreventRenderingCells()
+        replaceRefreshControlWithFakeOrIOS17Support()
+    }
+    
+    private func setSmallFrameToPreventRenderingCells() {
+        tableView.frame = CGRect(x: 0, y: 0, width: 390, height: 1) //This way we prevent cells from loading ahead of time with the diffable data source in all tests where load view is needed
+    }
+    
     func replaceRefreshControlWithFakeOrIOS17Support() {
         let fake = FakeRefreshControl()
         refreshControl?.allTargets.forEach { target in
