@@ -1,0 +1,39 @@
+{
+  "configurations" : [
+    {
+      "id" : "15E6D5BE-B2D0-4635-8C68-C17A2D4BDFEA",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:CleanArchitecture.xcodeproj",
+          "identifier" : "A346F6862E4AF98A004C768B",
+          "name" : "CleanArchitecture"
+        },
+        {
+          "containerPath" : "container:CleanArchitecture.xcodeproj",
+          "identifier" : "A3DBEDE42E6EA4AB003D1E33",
+          "name" : "CleanArchitectureiOS"
+        }
+      ]
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:CleanArchitecture.xcodeproj",
+        "identifier" : "A30A3D6C2E8CE69F004E0CB7",
+        "name" : "CleanArchitectureiOSTests"
+      }
+    }
+  ],
+  "version" : 1
+}

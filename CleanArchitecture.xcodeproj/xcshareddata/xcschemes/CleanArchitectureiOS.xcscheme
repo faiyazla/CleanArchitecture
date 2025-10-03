@@ -30,7 +30,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:CleanArchitectureiOS.xctestplan"
+            reference = "container:CleanArchitectureApp/CleanArchitectureiOS.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -40,7 +40,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A3DBEDEC2E6EA4AB003D1E33"
+               BlueprintIdentifier = "A30A3D6C2E8CE69F004E0CB7"
                BuildableName = "CleanArchitectureiOSTests.xctest"
                BlueprintName = "CleanArchitectureiOSTests"
                ReferencedContainer = "container:CleanArchitecture.xcodeproj">

@@ -13,7 +13,7 @@ public extension FeedViewController {
     func simulateAppearance() {
         if !isViewLoaded {
             loadViewIfNeeded()
-            replaceRefreshControlWithFakeOrIOS17Support()
+            prepareForFirstAppearance()
         }
         beginAppearanceTransition(true, animated: false)//viewWillAppear
         endAppearanceTransition() //viewIsAppearing+viewDidAppear

@@ -54,54 +54,48 @@ final class FeedUIIntegrationTests: XCTestCase {
     }
     
     func test_loadFeedCompletion_rendersSuccessfullyLoadedFeed() {
-        //FIXME: fix the memory leak issue
+        let image0 = makeImage(description: "a description", location: "any location")
+        let image1 = makeImage(description: nil, location: "any location")
+        let image2 = makeImage(description: "a description", location: nil)
+        let image3 = makeImage(description: nil, location: nil)
+
+        let (sut, loader) = makeSUT()
+        sut.simulateAppearance()
+        assertThat(sut, isRendering: [])
         
-//        let image0 = makeImage(description: "a description", location: "any location")
-//        let image1 = makeImage(description: nil, location: "any location")
-//        let image2 = makeImage(description: "a description", location: nil)
-//        let image3 = makeImage(description: nil, location: nil)
-//
-//        let (sut, loader) = makeSUT()
-//        sut.simulateAppearance()
-//        assertThat(sut, isRendering: [])
-//        
-//        loader.completeFeedLoading(with: [image0], at: 0)
-//        assertThat(sut, isRendering: [image0])
-//        
-//        sut.simulateUserInitiatedFeedReload()
-//        loader.completeFeedLoading(with: [image0, image1, image2, image3], at: 1)
-//        assertThat(sut, isRendering: [image0, image1, image2, image3])
+        loader.completeFeedLoading(with: [image0], at: 0)
+        assertThat(sut, isRendering: [image0])
+        
+        sut.simulateUserInitiatedFeedReload()
+        loader.completeFeedLoading(with: [image0, image1, image2, image3], at: 1)
+        assertThat(sut, isRendering: [image0, image1, image2, image3])
     }
     
     func test_loadFeedCompletion_rendersSuccessfullyLoadedEmptyFeedAfterNonEmptyFeed() {
-        //FIXME: fix the memory leak issue
+        let image0 = makeImage()
+        let image1 = makeImage()
+        let (sut, loader) = makeSUT()
         
-//        let image0 = makeImage()
-//        let image1 = makeImage()
-//        let (sut, loader) = makeSUT()
-//        
-//        sut.simulateAppearance()
-//        loader.completeFeedLoading(with: [image0, image1], at: 0)
-//        assertThat(sut, isRendering: [image0, image1])
-//        
-//        sut.simulateUserInitiatedFeedReload()
-//        loader.completeFeedLoading(with: [], at: 1)
-//        assertThat(sut, isRendering: [])
+        sut.simulateAppearance()
+        loader.completeFeedLoading(with: [image0, image1], at: 0)
+        assertThat(sut, isRendering: [image0, image1])
+        
+        sut.simulateUserInitiatedFeedReload()
+        loader.completeFeedLoading(with: [], at: 1)
+        assertThat(sut, isRendering: [])
     }
     
     func test_loadFeedCompletion_doesNotAlterCurrentRenderingStateOnError() {
-        //FIXME: fix the memory leak issue
+        let image0 = makeImage()
+        let (sut, loader) = makeSUT()
         
-//        let image0 = makeImage()
-//        let (sut, loader) = makeSUT()
-//        
-//        sut.simulateAppearance()
-//        loader.completeFeedLoading(with: [image0], at: 0)
-//        assertThat(sut, isRendering: [image0])
-//        
-//        sut.simulateUserInitiatedFeedReload()
-//        loader.completeFeedLoadingWithError(at: 1)
-//        assertThat(sut, isRendering: [image0])
+        sut.simulateAppearance()
+        loader.completeFeedLoading(with: [image0], at: 0)
+        assertThat(sut, isRendering: [image0])
+        
+        sut.simulateUserInitiatedFeedReload()
+        loader.completeFeedLoadingWithError(at: 1)
+        assertThat(sut, isRendering: [image0])
     }
     
     func test_feedImageView_loadsImageURLWhenVisible() {
@@ -367,7 +361,7 @@ final class FeedUIIntegrationTests: XCTestCase {
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
         let loader = LoaderSpy()
-        let sut = FeedUIComposer.feedComposedWith(feedLoader: loader, imageLoader: loader)
+        let sut = FeedUIComposer.feedComposedWith(feedLoader: loader.loadPublisher, imageLoader: loader)
         trackForMemoryLeaks(loader, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, loader)
