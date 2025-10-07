@@ -66,20 +66,25 @@ final class CleanArchitectureAPIEndToEndTests: XCTestCase {
     }
     
     private func getImageFeedDataResult(file: StaticString = #file, line: UInt = #line) -> FeedImageDataLoader.Result? {
-        let loader = RemoteFeedImageDataLoader(client: ephemeralClient())
-        trackForMemoryLeaks(loader, file: file, line: line)
+        let client = ephemeralClient()
         
         let exp = expectation(description: "wait for load completion")
         let url = feedTestServerURL.appendingPathComponent("73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6/image")
 
-        var receivedResults: FeedImageDataLoader.Result?
-        _ = loader.loadImageData(from: url, completion: { result in
-            receivedResults = result
+        var receivedResult: FeedImageDataLoader.Result?
+        client.get(from: url) { result in
+            receivedResult = result.flatMap { (data, response) in
+                do {
+                    return .success(try FeedImageDataMapper.map(data, from: response))
+                } catch {
+                    return .failure(error)
+                }
+            }
             exp.fulfill()
-        })
+        }
         wait(for: [exp], timeout: 5.0)
         
-        return receivedResults
+        return receivedResult
     }
     
     private func ephemeralClient(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
