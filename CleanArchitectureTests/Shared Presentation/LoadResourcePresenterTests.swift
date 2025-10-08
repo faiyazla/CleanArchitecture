@@ -24,14 +24,15 @@ final class LoadResourcePresenterTests: XCTestCase {
     }
     
     func test_didFinishLoadingFeed_displaysLoadingFeedAndStopsLoading() {
-        let (sut, view) = makeSUT()
-        let feed = uniqueImageFeed().models
+        let (sut, view) = makeSUT(mapper: { resource in
+            resource + " view model"
+        })
         
-        sut.didFinishLoadingFeed(with: feed)
+        sut.didFinishLoading(with: "resource")
         
         XCTAssertEqual(view.messages, [
             .display(isLoading: false),
-            .display(feed: feed)
+            .display(resourceViewModel: "resource view model")
         ])
     }
     
@@ -49,10 +50,12 @@ final class LoadResourcePresenterTests: XCTestCase {
     
     //MARK: Helpers
     
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: LoadResourcePresenter, view: ViewSpy) {
+    private func makeSUT(mapper: @escaping LoadResourcePresenter.Mapper = { _ in "any" },
+        file: StaticString = #file,
+        line: UInt = #line) -> (sut: LoadResourcePresenter, view: ViewSpy) {
 
         let view = ViewSpy()
-        let sut = LoadResourcePresenter(errorView: view, loadingView: view, feedView: view)
+        let sut = LoadResourcePresenter(errorView: view, loadingView: view, resourceView: view, mapper: mapper)
        trackForMemoryLeaks(view, file: file, line: line)
        trackForMemoryLeaks(sut, file: file, line: line)
        return (sut, view)
@@ -68,13 +71,13 @@ final class LoadResourcePresenterTests: XCTestCase {
         return value
     }
     
-    final class ViewSpy: FeedErrorView, FeedLoadingView, FeedView {
+    final class ViewSpy: FeedErrorView, FeedLoadingView, ResourceView {
         var messages = Set<Message>()
         
         enum Message: Hashable {
             case display(errorMessage: String?)
             case display(isLoading: Bool)
-            case display(feed: [FeedImage])
+            case display(resourceViewModel: String)
         }
         
         func display(_ viewModel: FeedErrorViewModel) {
@@ -85,8 +88,8 @@ final class LoadResourcePresenterTests: XCTestCase {
             messages.insert(.display(isLoading: viewModel.isLoading))
         }
         
-        func display(_ viewModel: FeedViewModel) {
-            messages.insert(.display(feed: viewModel.feed))
+        func display(_ viewModel: String) {
+            messages.insert(.display(resourceViewModel: viewModel))
         }
     }
 }
