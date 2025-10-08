@@ -76,6 +76,9 @@
 		A35505AD2E962BDC00AA7D24 /* LoadResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35505AC2E962BD600AA7D24 /* LoadResourcePresenterTests.swift */; };
 		A35505B22E9634C500AA7D24 /* Shared.strings in Sources */ = {isa = PBXBuildFile; fileRef = A35505B12E9634C500AA7D24 /* Shared.strings */; };
 		A35505B62E96360400AA7D24 /* SharedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35505B52E9635FC00AA7D24 /* SharedLocalizationTests.swift */; };
+		A35505B82E96380300AA7D24 /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35505B72E9637F900AA7D24 /* SharedLocalizationTestHelpers.swift */; };
+		A35505B92E96380300AA7D24 /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35505B72E9637F900AA7D24 /* SharedLocalizationTestHelpers.swift */; };
+		A35505BA2E96380300AA7D24 /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35505B72E9637F900AA7D24 /* SharedLocalizationTestHelpers.swift */; };
 		A3DBF1602E6FF652003D1E33 /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; platformFilter = ios; };
 		A3DBF1612E6FF652003D1E33 /* CleanArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A3FF09DA2E56E4AF0088CEFF /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; };
@@ -208,6 +211,7 @@
 		A35505B32E9634C600AA7D24 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
 		A35505B42E9634C700AA7D24 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Shared.strings"; sourceTree = "<group>"; };
 		A35505B52E9635FC00AA7D24 /* SharedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTests.swift; sourceTree = "<group>"; };
+		A35505B72E9637F900AA7D24 /* SharedLocalizationTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTestHelpers.swift; sourceTree = "<group>"; };
 		A3DBEDE52E6EA4AB003D1E33 /* CleanArchitectureiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanArchitectureiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FF09D12E56D0EC0088CEFF /* CleanArchitecture.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitecture.xctestplan; sourceTree = "<group>"; };
 		A3FF09D62E56E4AF0088CEFF /* CleanArchitectureAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -502,6 +506,7 @@
 		A35505722E93941800AA7D24 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A35505B72E9637F900AA7D24 /* SharedLocalizationTestHelpers.swift */,
 				A35505702E93941800AA7D24 /* SharedTestHelpers.swift */,
 				A35505712E93941800AA7D24 /* XCTestCase+MemoryLeakTracking.swift */,
 			);
@@ -851,6 +856,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35505BA2E96380300AA7D24 /* SharedLocalizationTestHelpers.swift in Sources */,
 				A35505922E93941800AA7D24 /* FeedCacheTestHelpers.swift in Sources */,
 				A35505932E93941800AA7D24 /* SharedTestHelpers.swift in Sources */,
 				A35505942E93941800AA7D24 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
@@ -918,6 +924,7 @@
 				A35505A32E94E7C700AA7D24 /* ImageCommentsMapperTests.swift in Sources */,
 				A35505852E93941800AA7D24 /* CodableFeedStoreTests.swift in Sources */,
 				A35505862E93941800AA7D24 /* CoreDataFeedImageDataStoreTests.swift in Sources */,
+				A35505B92E96380300AA7D24 /* SharedLocalizationTestHelpers.swift in Sources */,
 				A35505872E93941800AA7D24 /* CoreDataFeedStoreTests.swift in Sources */,
 				A35505A12E94E35300AA7D24 /* FeedItemsMapperTests.swift in Sources */,
 				A35505882E93941800AA7D24 /* LoadFeedFromCacheUseCaseTests.swift in Sources */,
@@ -942,6 +949,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35505B82E96380300AA7D24 /* SharedLocalizationTestHelpers.swift in Sources */,
 				A35505902E93941800AA7D24 /* SharedTestHelpers.swift in Sources */,
 				A35505912E93941800AA7D24 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
