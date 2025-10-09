@@ -80,6 +80,15 @@ class FeedImagePresenterTests: XCTestCase {
         XCTAssertNil(message?.image)
     }
     
+    func test_map_createsViewModels() {
+        let image = uniqueImage()
+        
+        let viewModel = FeedImagePresenter<ViewSpy, AnyImage>.map(image)
+        
+        XCTAssertEqual(viewModel.description, image.description)
+        XCTAssertEqual(viewModel.location, image.location)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(imageTransformer: @escaping (Data) -> AnyImage? = { _ in nil }, file: StaticString = #file, line: UInt = #line) -> (sut: FeedImagePresenter<ViewSpy, AnyImage>, view: ViewSpy) {
