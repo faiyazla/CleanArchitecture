@@ -84,6 +84,7 @@
 		A35506B12E978BBC00AA7D24 /* ImageCommentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35506B02E978BB300AA7D24 /* ImageCommentsPresenter.swift */; };
 		A35506B42E978C5E00AA7D24 /* ImageCommentsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35506B32E978C5900AA7D24 /* ImageCommentsPresenterTests.swift */; };
 		A35506B92E978CDF00AA7D24 /* ImageComments.strings in Resources */ = {isa = PBXBuildFile; fileRef = A35506B72E978CDF00AA7D24 /* ImageComments.strings */; };
+		A35506BD2E978DBC00AA7D24 /* ImageCommentsLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35506BC2E978DB300AA7D24 /* ImageCommentsLocalizationTests.swift */; };
 		A3DBF1602E6FF652003D1E33 /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; platformFilter = ios; };
 		A3DBF1612E6FF652003D1E33 /* CleanArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A3FF09DA2E56E4AF0088CEFF /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A346F6872E4AF98A004C768B /* CleanArchitecture.framework */; };
@@ -224,6 +225,7 @@
 		A35506B82E978CDF00AA7D24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ImageComments.strings; sourceTree = "<group>"; };
 		A35506BA2E978CE800AA7D24 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/ImageComments.strings; sourceTree = "<group>"; };
 		A35506BB2E978CE800AA7D24 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/ImageComments.strings"; sourceTree = "<group>"; };
+		A35506BC2E978DB300AA7D24 /* ImageCommentsLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsLocalizationTests.swift; sourceTree = "<group>"; };
 		A3DBEDE52E6EA4AB003D1E33 /* CleanArchitectureiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanArchitectureiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FF09D12E56D0EC0088CEFF /* CleanArchitecture.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CleanArchitecture.xctestplan; sourceTree = "<group>"; };
 		A3FF09D62E56E4AF0088CEFF /* CleanArchitectureAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -531,7 +533,7 @@
 			children = (
 				A35505AB2E962BCC00AA7D24 /* Shared Presentation */,
 				A35505992E9394B500AA7D24 /* Image Comments API */,
-				A35506B22E978C4600AA7D24 /* Image Comments Presenter */,
+				A35506B22E978C4600AA7D24 /* Image Comments Presentation */,
 				A35505952E93942700AA7D24 /* Share API Infra */,
 				A35505582E93941800AA7D24 /* Feed API */,
 				A355056B2E93941800AA7D24 /* Feed Cache */,
@@ -604,12 +606,13 @@
 			path = "Image Comments Presenter";
 			sourceTree = "<group>";
 		};
-		A35506B22E978C4600AA7D24 /* Image Comments Presenter */ = {
+		A35506B22E978C4600AA7D24 /* Image Comments Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A35506BC2E978DB300AA7D24 /* ImageCommentsLocalizationTests.swift */,
 				A35506B32E978C5900AA7D24 /* ImageCommentsPresenterTests.swift */,
 			);
-			path = "Image Comments Presenter";
+			path = "Image Comments Presentation";
 			sourceTree = "<group>";
 		};
 		A3DBF15F2E6FF652003D1E33 /* Frameworks */ = {
@@ -970,6 +973,7 @@
 				A355058A2E93941800AA7D24 /* ValidateFeedCacheUseCaseTests.swift in Sources */,
 				A355058B2E93941800AA7D24 /* FeedImagePresenterTests.swift in Sources */,
 				A355058C2E93941800AA7D24 /* FeedLocalizationTests.swift in Sources */,
+				A35506BD2E978DBC00AA7D24 /* ImageCommentsLocalizationTests.swift in Sources */,
 				A355058D2E93941800AA7D24 /* FeedPresenterTests.swift in Sources */,
 				A355058E2E93941800AA7D24 /* SharedTestHelpers.swift in Sources */,
 				A355058F2E93941800AA7D24 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
