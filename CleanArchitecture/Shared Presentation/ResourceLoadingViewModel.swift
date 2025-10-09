@@ -1,10 +1,12 @@
 //
-//  FeedLoadingViewModel.swift
+//  ResourceLoadingViewModel.swift
 //  CleanArchitecture
 //
 //  Created by Faiyaz Ahmed on 23/09/2025.
 //
 
-public struct FeedLoadingViewModel {
+import Foundation
+
+public struct ResourceLoadingViewModel {
     public let isLoading: Bool
 }
