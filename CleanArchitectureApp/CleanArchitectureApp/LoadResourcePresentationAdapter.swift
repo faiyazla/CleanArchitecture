@@ -9,7 +9,7 @@ import CleanArchitecture
 import CleanArchitectureiOS
 import Combine
 
-final class LoadResourcePresenterAdapter<Resource, View: ResourceView> {
+final class LoadResourcePresentationAdapter<Resource, View: ResourceView> {
     private let loader: () -> AnyPublisher<Resource, Error>
     private var cancellable: Cancellable?
     
@@ -37,13 +37,13 @@ final class LoadResourcePresenterAdapter<Resource, View: ResourceView> {
     }
 }
 
-extension LoadResourcePresenterAdapter: FeedViewControllerDelegate {
+extension LoadResourcePresentationAdapter: FeedViewControllerDelegate {
     func didRequestFeedRefresh() {
         loadResource()
     }
 }
 
-extension LoadResourcePresenterAdapter: FeedImageCellControllerDelegate {
+extension LoadResourcePresentationAdapter: FeedImageCellControllerDelegate {
     func didRequestImage() {
         loadResource()
     }
