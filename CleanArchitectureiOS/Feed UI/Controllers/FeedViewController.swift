@@ -12,18 +12,36 @@ public protocol FeedViewControllerDelegate {
     func didRequestFeedRefresh()
 }
 
-final public class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, ResourceLoadingView, ResourceErrorView {
+public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, ResourceLoadingView, ResourceErrorView {
     
-    private var onViewIsAppearing: ((FeedViewController) -> Void)?
-    
-    @IBOutlet private(set) public var errorView: ErrorView?
+    @IBOutlet private(set) public var errorView: ErrorView!
     
     private var loadingControllers = [IndexPath: FeedImageCellController]()
     
-    public var delegate: FeedViewControllerDelegate?
-    
     private var tableModel = [FeedImageCellController]() {
         didSet { tableView.reloadData() }
+    }
+        
+    public var delegate: FeedViewControllerDelegate?
+
+    private var imageLoader: FeedImageDataLoader?
+    private var cellControllers = [IndexPath: FeedImageCellController]()
+    
+    private var onViewIsAppearing: ((FeedViewController) -> Void)?
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+
+        onViewIsAppearing = { vc in
+            vc.onViewIsAppearing = nil
+            vc.refresh()
+        }
+    }
+    
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        tableView.sizeTableHeaderToFit()
     }
     
     @IBAction private func refresh() {
@@ -34,46 +52,26 @@ final public class FeedViewController: UITableViewController, UITableViewDataSou
         loadingControllers = [:]
         tableModel = cellControllers
     }
-    
+
     public func display(_ viewModel: ResourceLoadingViewModel) {
         refreshControl?.update(isRefreshing: viewModel.isLoading)
     }
     
     public func display(_ viewModel: ResourceErrorViewModel) {
-        errorView?.isHidden = viewModel.message == nil
-        errorView?.message = viewModel.message
-    }
-    
-    public override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        tableView.sizeTableHeaderToFit()
-    }
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.prefetchDataSource = self
-        
-        onViewIsAppearing = { vc in
-            vc.refresh()
-            vc.onViewIsAppearing = nil
-        }
-        refresh()
-    }
+         errorView?.message = viewModel.message
+     }
     
     public override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
-        
         onViewIsAppearing?(self)
     }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tableModel.count
+        return tableModel.count
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        cellController(forRowAt: indexPath).view(in: tableView)
+        return cellController(forRowAt: indexPath).view(in: tableView)
     }
     
     public override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -87,7 +85,12 @@ final public class FeedViewController: UITableViewController, UITableViewDataSou
     }
     
     public func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        indexPaths.forEach(cancelCellControllerLoad)
+        indexPaths.forEach(cancelCellControllerLoad(forRowAt:))
+    }
+    
+    private func cancelCellControllerLoad(forRowAt indexPath: IndexPath) {
+        loadingControllers[indexPath]?.cancelLoad()
+        loadingControllers[indexPath] = nil
     }
     
     private func cellController(forRowAt indexPath: IndexPath) -> FeedImageCellController {
@@ -96,8 +99,7 @@ final public class FeedViewController: UITableViewController, UITableViewDataSou
         return controller
     }
     
-    private func cancelCellControllerLoad(forRowAt indexPath: IndexPath) {
-        loadingControllers[indexPath]?.cancelLoad()
-        loadingControllers[indexPath] = nil
+    private func removeCellController(forRowAt indexPath: IndexPath) {
+        cellControllers[indexPath] = nil
     }
 }
