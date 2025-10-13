@@ -1,5 +1,5 @@
 //
-//  FeedViewController+TestHelpers.swift
+//  ListViewController+TestHelpers.swift
 //  CleanArchitecture
 //
 //  Created by Faiyaz Ahmed on 13/09/2025.
@@ -8,7 +8,7 @@
 import UIKit
 import CleanArchitectureiOS
 
-public extension FeedViewController {
+public extension ListViewController {
     
     func simulateAppearance() {
         if !isViewLoaded {
@@ -40,7 +40,7 @@ public extension FeedViewController {
     }
 }
 
-public extension FeedViewController {
+public extension ListViewController {
     func simulateUserInitiatedFeedReload() {
         refreshControl?.simulatePullToRefresh()
     }
