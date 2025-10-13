@@ -33,7 +33,7 @@ final class FeedViewAdapter: ResourceView {
                 loadingView: WeakRefVirtualProxy(view),
                 resourceView: WeakRefVirtualProxy(view),
                 mapper: UIImage.tryMake)
-            return view
+            return CellController(view)
         })
     }
 }
