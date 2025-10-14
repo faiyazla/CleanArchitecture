@@ -27,13 +27,18 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource.defaultRowAnimation = .fade
-        tableView.dataSource = dataSource
-        configureErrorView()
+
+        configureTableView()
         onViewIsAppearing = { vc in
             vc.onViewIsAppearing = nil
             vc.refresh()
         }
+    }
+    
+    private func configureTableView() {
+        dataSource.defaultRowAnimation = .fade
+        tableView.dataSource = dataSource
+        tableView.tableHeaderView = errorView.makeContainer()
     }
     
     //When checking dynamic fonts table view would hide the location label. to fix it
