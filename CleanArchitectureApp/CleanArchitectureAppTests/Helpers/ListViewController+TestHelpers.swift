@@ -73,7 +73,7 @@ public extension ListViewController {
     
     func feedImageView(at row: Int) -> UITableViewCell? {
         guard numberOfRenderedFeedImageViews() > row else {
-             return nil
+            return nil
         }
         let ds = tableView.dataSource
         let index = IndexPath(row: row, section: feedImageSection)
@@ -129,11 +129,17 @@ public extension ListViewController {
     }
     
     var loadMoreFeedErrorMessage: String? {
-         return loadMoreFeedCell()?.message
-     }
-
+        return loadMoreFeedCell()?.message
+    }
+    
     private func loadMoreFeedCell() -> LoadMoreCell? {
         cell(row: 0, section: feedLoadMoreSection) as? LoadMoreCell
+    }
+    
+    func simulateTapOnLoadMoreFeedError() {
+        let delegate = tableView.delegate
+        let index = IndexPath(row: 0, section: feedLoadMoreSection)
+        delegate?.tableView?(tableView, didSelectRowAt: index)
     }
     
     func cell(row: Int, section: Int) -> UITableViewCell? {
