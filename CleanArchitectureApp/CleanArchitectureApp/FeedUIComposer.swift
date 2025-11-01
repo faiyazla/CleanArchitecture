@@ -24,12 +24,11 @@ public final class FeedUIComposer {
         let feedController = makeWith(title: FeedPresenter.title)
         feedController.onRefresh = presentationAdapter.loadResource
         
-        let presenter = LoadResourcePresenter(errorView: WeakRefVirtualProxy(feedController),
-                                      loadingView: WeakRefVirtualProxy(feedController),
-                                      resourceView: FeedViewAdapter(controller: feedController,
-                                                                    imageLoader: imageLoader,
-                                                                   selection: selection),
-                                              mapper: { $0 })
+        let presenter = LoadResourcePresenter(resourceView: FeedViewAdapter(controller: feedController,
+                                                           imageLoader: imageLoader,
+                                                          selection: selection),
+                              loadingView: WeakRefVirtualProxy(feedController),
+                              errorView: WeakRefVirtualProxy(feedController))
         presentationAdapter.presenter = presenter
         return feedController
     }
