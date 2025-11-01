@@ -11,7 +11,7 @@ import CleanArchitectureiOS
 
 
 class FeedSnapshotTests: XCTestCase {
-
+    
     func test_feedWithContent() {
         let sut = makeSUT()
         
@@ -30,9 +30,18 @@ class FeedSnapshotTests: XCTestCase {
         assert(snapshot: sut.snapshot(for: .iPhone16Pro(style: .light)), named: "FEED_WITH_FAILED_IMAGE_LOADING_light")
         assert(snapshot: sut.snapshot(for: .iPhone16Pro(style: .dark)), named: "FEED_WITH_FAILED_IMAGE_LOADING_dark")
     }
-
+    
+    func test_feedWithLoadingMoreIndicator() {
+        let sut = makeSUT()
+        
+        sut.display(feedWithLoadMoreIndicator())
+        
+        assert(snapshot: sut.snapshot(for: .iPhone16Pro(style: .light)), named: "FEED_WITH_LOAD_MORE_INDICATOR_light")
+        assert(snapshot: sut.snapshot(for: .iPhone16Pro(style: .dark)), named: "FEED_WITH_LOAD_MORE_INDICATOR_dark")
+    }
+    
     // MARK: - Helpers
-
+    
     private func makeSUT() -> ListViewController {
         let bundle = Bundle(for: ListViewController.self)
         let storyboard = UIStoryboard(name: "Feed", bundle: bundle)
@@ -40,7 +49,7 @@ class FeedSnapshotTests: XCTestCase {
         controller.loadViewIfNeeded()
         return controller
     }
-
+    
     private func emptyFeed() -> [FeedImageCellController] {
         return []
     }
@@ -49,7 +58,7 @@ class FeedSnapshotTests: XCTestCase {
         return [
             ImageStub(
                 description: "The East Side Gallery is an open-air gallery in Berlin. It consists of a series of murals painted directly on a 1,316 m long remnant of the Berlin Wall, located near the centre of Berlin, on Mühlenstraße in Friedrichshain-Kreuzberg. The gallery has official status as a Denkmal, or heritage-protected landmark.",
-                 location: "East Side Gallery\nMemorial in Berlin, Germany",
+                location: "East Side Gallery\nMemorial in Berlin, Germany",
                 image: UIImage.make(withColor: .red)
             ),
             ImageStub(
@@ -67,11 +76,26 @@ class FeedSnapshotTests: XCTestCase {
                 location: "Cannon Street, London",
                 image: nil
             ),
-             ImageStub(
+            ImageStub(
                 description: nil,
                 location: "Brighton Seafront",
                 image: nil
             )
+        ]
+    }
+    
+    private func feedWithLoadMoreIndicator() -> [CellController] {
+        let stub = feedWithContent().last!
+        let cellController = FeedImageCellController(viewModel: stub.viewModel,
+                                                     delegate: stub,
+                                                     selection: {})
+        stub.controller = cellController
+        
+        let loadMore = LoadMoreCellController()
+        loadMore.display(ResourceLoadingViewModel(isLoading: true))
+        return [
+            CellController(id: UUID(), cellController),
+            CellController(id: UUID(), loadMore)
         ]
     }
 }
@@ -101,7 +125,7 @@ private class ImageStub: FeedImageCellControllerDelegate {
     
     func didRequestImage() {
         controller?.display(ResourceLoadingViewModel(isLoading: false))
-
+        
         if let image = image {
             controller?.display(image)
             controller?.display(ResourceErrorViewModel(message: .none))
